@@ -16,12 +16,12 @@ def consolidate_cart(cart)
   cart.each do |item_info|
     current_item = find_item_by_name_in_collection(item_info[:item], final_cart)
     if current_item
-      new_cart_count = 0
-      final_cart.each do |new_cart_item|
-        if new_cart_item[:item] == current_item[:item]
-          new_cart_item[:count] += 1
+      final_cart_count = 0
+      final_cart.each do |final_cart_item|
+        if final_cart_item[:item] == current_item[:item]
+          final_cart_item[:count] += 1
         end
-        new_cart_count += 1
+        final_cart_count += 1
       end
     else
       item_info[:count] = 1
